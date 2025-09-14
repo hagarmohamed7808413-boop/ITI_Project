@@ -1,0 +1,20 @@
+﻿@model Product
+
+<h2>Product Details</h2>
+
+<div>
+    <h4>@Model.Title</h4>
+    <p><strong>Price:</strong> @Model.Price</p>
+    <p><strong>Quantity:</strong> @Model.Quantity</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+    <p><strong>Category:</strong> @Model.Category?.Name</p>
+
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <p><img src="@Model.ImagePath" alt="@Model.Title" width="200" height="200" /></p>
+    }
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>

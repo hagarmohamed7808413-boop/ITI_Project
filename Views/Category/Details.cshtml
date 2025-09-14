@@ -1,0 +1,19 @@
+﻿@model Category
+
+<h2>Category Details</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <p>@Model.Description</p>
+    <h5>Products in this Category:</h5>
+    <ul>
+        @foreach (var product in Model.Products)
+        {
+            <li>@product.Title</li>
+        }
+    </ul>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
